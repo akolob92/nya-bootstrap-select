@@ -412,7 +412,7 @@ nyaBsSelect.directive('nyaBsSelect', ['$parse', '$document', '$timeout', '$compi
 
   var DEFAULT_NONE_SELECTION = 'Nothing selected';
 
-  var DROPDOWN_TOGGLE = '<button class="btn btn-default dropdown-toggle" type="button">' +
+  var DROPDOWN_TOGGLE = '<button class="btn btn-secondary dropdown-toggle" type="button">' +
     '<span class="pull-left filter-option"></span>' +
     '<span class="pull-left special-title"></span>' +
     '&nbsp;' +
@@ -431,8 +431,8 @@ nyaBsSelect.directive('nyaBsSelect', ['$parse', '$document', '$timeout', '$compi
 
   var ACTIONS_BOX = '<div class="bs-actionsbox">' +
     '<div class="btn-group btn-group-sm btn-block">' +
-    '<button class="actions-btn bs-select-all btn btn-default">SELECT ALL</button>' +
-    '<button class="actions-btn bs-deselect-all btn btn-default">DESELECT ALL</button>' +
+    '<button class="actions-btn bs-select-all btn btn-secondary">SELECT ALL</button>' +
+    '<button class="actions-btn bs-deselect-all btn btn-secondary">DESELECT ALL</button>' +
     '</div>' +
     '</div>';
 
@@ -441,7 +441,7 @@ nyaBsSelect.directive('nyaBsSelect', ['$parse', '$document', '$timeout', '$compi
     require: ['ngModel', 'nyaBsSelect'],
     controller: 'nyaBsSelectCtrl',
     compile: function nyaBsSelectCompile (tElement, tAttrs){
-      
+
 
       tElement.addClass('btn-group');
 
@@ -473,7 +473,7 @@ nyaBsSelect.directive('nyaBsSelect', ['$parse', '$document', '$timeout', '$compi
         }
 
         if(scope && (tAttrs.titleTpl || localizedText.defaultNoneSelectionTpl)) {
-          
+
           return $compile(content)(scope);
         }
 
@@ -499,7 +499,7 @@ nyaBsSelect.directive('nyaBsSelect', ['$parse', '$document', '$timeout', '$compi
       classList.forEach(function(className) {
         if(/btn-(?:primary|info|success|warning|danger|inverse)/.test(className)) {
           tElement.removeClass(className);
-          dropdownToggle.removeClass('btn-default');
+          dropdownToggle.removeClass('btn-secondary');
           dropdownToggle.addClass(className);
         }
 
@@ -580,7 +580,7 @@ nyaBsSelect.directive('nyaBsSelect', ['$parse', '$document', '$timeout', '$compi
       tElement.append(dropdownContainer);
 
       return function nyaBsSelectLink ($scope, $element, $attrs, ctrls) {
-        
+
         var ngCtrl = ctrls[0],
           nyaBsSelectCtrl = ctrls[1],
           liHeight,
@@ -706,7 +706,7 @@ nyaBsSelect.directive('nyaBsSelect', ['$parse', '$document', '$timeout', '$compi
            * we need to refresh dropdown button content whenever a change happened in collection.
            */
           if(deepWatched) {
-            
+
             updateButtonContent();
           }
 
@@ -718,7 +718,7 @@ nyaBsSelect.directive('nyaBsSelect', ['$parse', '$document', '$timeout', '$compi
           if(isDisabled) {
             return;
           }
-          
+
           if(jqLite(event.target).hasClass('dropdown-header')) {
             return;
           }
@@ -745,7 +745,7 @@ nyaBsSelect.directive('nyaBsSelect', ['$parse', '$document', '$timeout', '$compi
         };
         $document.on('click', outClick);
 
-        
+
 
         dropdownToggle.on('blur', function() {
           if(!$element.hasClass('open')) {
@@ -904,7 +904,7 @@ nyaBsSelect.directive('nyaBsSelect', ['$parse', '$document', '$timeout', '$compi
           }
 
           if(toggleButton) {
-            
+
 
             // press enter to active dropdown
             if((keyCode === 13 || keyCode === 38 || keyCode === 40) && !$element.hasClass('open')) {
@@ -1412,7 +1412,7 @@ nyaBsSelect.directive('nyaBsSelect', ['$parse', '$document', '$timeout', '$compi
           dropdownToggle.off();
           if (searchBox.off) searchBox.off();
           $document.off('click', outClick);
-          
+
         });
 
       };

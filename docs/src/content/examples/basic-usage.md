@@ -55,7 +55,7 @@ This example demonstrate how how to use `nya-bs-option` directive to generate op
 <form class="form-inline">
   <p class="alert-info"> You have select {{dynModel}}</p>
   <p class="alert-info"> options is {{options}}</p>
-  <button class="btn btn-default" ng-click="changeGroups('options')">Change Option</button>
+  <button class="btn btn-secondary" ng-click="changeGroups('options')">Change Option</button>
   <ol class="nya-bs-select" ng-model="dynModel">
     <li nya-bs-option="option in options">
       <a>

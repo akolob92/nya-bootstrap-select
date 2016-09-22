@@ -12,7 +12,7 @@ an select being disabled or enabled. Note that `ng-disabled` are not supported.
 <example>
 <file name="index.html">
 <form>
-<button class="btn btn-default" ng-click="disable=!disable">
+<button class="btn btn-secondary" ng-click="disable=!disable">
   {{ disable ? "Enable select" : "Disable select" }}
 </button>
 <ol class="nya-bs-select" ng-model="model" disabled="disable">
@@ -73,7 +73,7 @@ When using with form or ngForm, the valid status of form is also affected by thi
           </a>
         </li>
       </ol>
-      <button class="btn btn-default" ng-click="select2Required=!select2Required" type="button">select2 required: {{select2Required}}</button>
+      <button class="btn btn-secondary" ng-click="select2Required=!select2Required" type="button">select2 required: {{select2Required}}</button>
     </div>
   </div>
 </form>
